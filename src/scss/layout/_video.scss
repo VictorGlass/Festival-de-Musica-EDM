@@ -1,0 +1,56 @@
+//Importacion de Contenido a Utilizar.
+@use 'base/variables' as v;                                   //Para usar variables usar v.                                   
+@use 'base/mixins' as m;                                      //Para usar mixins usar m.
+
+//Video.
+.video {                                                       //Selector clase Video.
+    position: relative;                                        //Genera una posicion estandar.
+    max-height: 70rem;                                         //Altura maxima de 700 pixeles.
+    min-height: 50rem;                                         //Altura minima de 500 pixeles.
+    overflow: hidden;                                          
+
+    .overlay {                                                 //Selector clase Overlay.
+        position: absolute;                                    //Genera una posicion al inicio.
+        background: rgb(165,3,255);                          //Color de fondo.
+        background: linear-gradient(270deg, rgba(165,3,255,0.5) 0%,rgba(255,0,110,0.3) 100%);
+        height: 100%;                                          //Altura, que tome lo maximo posible.
+        width: 100%;                                           //Ancho, que tome lo maximo posible.
+        display: flex;                                         //Habilita display flex.
+        flex-direction: column;                                //Direccion de flexbox en columnas.
+        justify-content: center;                               //Alinea los elementos y los centra.
+    }                                                          
+
+
+    video {                                                    //Selector Video.
+        width: auto;                                           //Ancho automatico.
+        display: block;                                        //Habilita display block.
+        @include m.desktop {                                   //Incluye el mixin de escritorio - Media Querie.
+            width: 100%;                                       //Ancho del 100%.
+        }                                                      
+    }                                                          
+}                                                              
+
+//Contenido del Video.
+.contenido-video {                                              //Selector de la clase .contenido-video.
+    z-index: 10;                                                //Posiciona un contenido sobre otro.
+
+
+    h2 {                                                        //Selector h2.           
+        color: v.$blanco;                                       //Color de la fuente.
+        font-size: 7rem;                                        //Tamaño de la fuente 70 pixeles.
+        margin: 0;                                              //Margen.
+        margin-left: 1rem;                                      //Margen de la izquierda 10 pixeles.
+    }                                                           //
+
+
+    p {                                                         //Selector parrafos.
+        background-color: v.$rosa;                              //Color de fondo.
+        display: inline-block;                                  //
+        padding: 1rem 2rem;                                     //
+        color: v.$blanco;                                       //Color de la fuente.
+        font-weight: bold;                                      //Grosor de la fuente.
+        font-size: 2.4rem;                                      //Tamaño de la fuente 24 pixeles.
+        margin: 0;                                              //Margen 0.
+        margin-left: 1rem;                                      //Margen de la izquierda 10 pixeles.
+        }                                                       //
+    }                                                           //

@@ -1,0 +1,54 @@
+//Definiendo Mixins = Media Queries.
+
+//@mixin heading {
+//    text-transform: uppercase;
+//    font-size: 2.4rem;
+//    color: black;
+//    letter-spacing: 1px;
+//}
+@use 'variables' as v;                                            
+
+
+//Creacion de Media Queries en Sass.
+
+//Media Queries para Celular.
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+
+//Media Queries para Tablet.
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+//Media Queries para Desktop.
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+//Media Queries para Desktop XL:
+@mixin desktopXL {
+    @media (min-width: v.$desktopXL) {
+        @content;
+    }
+}
+
+//Mixin para Grid. - De Contenido Festival.- Crea contenedores.
+@mixin grid ($columnas, $espaciado){
+    display: grid;                                   //Habilitamos grid.
+    grid-template-columns: repeat($columnas, 1fr);   //Genera 2 columnas.
+    gap: 5rem;                                       //Separacion entre columnas.
+}
+
+//Mixin para resetear listas.
+@mixin resetear-lista {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

@@ -1,0 +1,65 @@
+//Header - Encabezado.
+@use 'base/variables' as v;                                     //Para usar archivo variables usar v.
+@use 'base/mixins' as m;                                        //Para usar archivo mixins usar m.
+
+//Selector de pocos niveles
+.header {                                                       //Selector clase .header.
+    background-color: v.$verde;                                 //Color de fondo.
+
+    @include m.tablet {
+            &.fijo {
+                left: 0;
+                top: 0;
+                position: fixed;
+                width: 100%;
+                box-shadow: .3rem .3rem .3rem #666;
+        }
+    }
+
+    
+    
+//Anidando en Sass
+    h1 {                                                        //Selector h1.
+        color: v.$blanco;                                       //Color de fondo.
+        text-align: center;                                     //Alineacion de texto al centro.
+        @include m.tablet{                                      //Mixin de Media Queries tamaño Tablet.
+            margin: 0;                                          //Margen de 0.
+        }                                                       //
+    }                                                           //
+
+    .contenido-header {                                         //Selector clase .contenido-header.
+        padding: 2rem;                                          //Padding añade separacion desde arriba.
+        @include m.tablet {                                     //Mixin de Media Queries tamaño Tablet.
+            display: flex;                                      //Habilita Display flex.
+            justify-content: space-between;                     //Alinea los elementos y genera espacio entre ellos.
+            align-items: center;                                //Alinea los elementos y los centra.
+        }                                                       //
+    }                                                           //
+}                                                               //
+
+
+.navegacion-principal {                                         //Selector de clase .navegacion-principal.
+    @include m.tablet {                                         //Mixin de Media Queries tamaño Tablet.
+        display: flex;                                          //Habilita Display flex.
+        gap: 2rem;                                              //Genera espacio entre filas y columnas.
+    }                                                           //
+
+
+    a { //Enlaces.                                              //Selector enlaces.
+        display: block;                                         //Habilita display block.
+        text-align: center;                                     //Alinea el texto al centro.
+        color: v.$blanco;                                       //Color de texto.
+        font-size: 2.4rem;                                      //Tamaño de la fuente 24 pixeles.
+        margin-bottom: 1rem;                                    //Genera margen en la parte inferior 10 pixeles.
+        @include m.tablet {                                     //Mixin de Media Queries tamaño Tablet.
+            margin: 0;                                          //Margen de 0.
+        }                                                       //
+
+
+        //Se usa & para evitar el espacio final en CSS
+        &:hover {                                                //Genera un efecto de cambio de color.
+            color: v.$amarillo;                                  //Color de texto.
+        }                                                        //
+    }                                                            //
+}                                                                //
+

@@ -1,0 +1,67 @@
+//Importando las variables
+@use 'variables' as v;                                      //Para usar variables usar v.
+
+html {                                                      //Selector html.
+    font-size: 62.5%;                                       //Tamaño de la fuente. lo Generaliza.
+    box-sizing: border-box;                                 //
+}                                                           //
+//Para evitar problemas con el padding.                     // Paul Irish.
+*, *:before,                                                //
+*:after {                                                   //
+    box-sizing: inherit;                                    //
+}                                                           //
+
+body {                                                      //Selector body.
+    font-family: v.$fuente_principal;                       //Para seleccionar la fuente a utilizar.
+    font-size: 1.6rem;                                      //Tamaño de la fuente 16 pixeles.
+
+    &.fijar-body {
+        overflow: hidden;
+    }
+    &.body-scroll {                                        //
+        padding-top: 8.6rem;                               //Soluciona el salto de linea con funcion js
+    }
+}
+
+//Parrafos
+p {                                                         //Selector parrafos.
+    font-size: 2rem;                                        //Tamaño de la fuente 20 pixeles.
+    color: v.$negro;                                        //Color de la fuente.
+    line-height: 1.5;                                       //Genera Interlineado.
+}
+
+//Contenedor barra navegacion.
+.contenedor {                                               //Selector clase .contenedor.
+    width: 95%;                                             //Altura de un 96%.
+    max-width: 120rem;                                      //Altura Maxima de 1200 pixeles.
+    margin: 0 auto;                                         //Margen 0 y auto.
+}
+
+//Enlaces.
+a {                                                         //Selector enlaces.
+    text-decoration: none;                                  //Decoracion del texto, la quita.
+}
+
+//Contenidos Principales.
+h1, h2, h3 {                                                //Selectores de h1, h2, h3.
+    margin: 0 0 5rem 0;                                     //Margen.
+}
+
+//Valores Individuales.
+h1 {                                                        //Selectores de h1.
+    font-size: 4rem;                                        //Tamaño de fuente individual 40 pixeles.
+}
+h2 {                                                        //Selectores de h2.
+    font-size: 3.6rem;                                      //Tamaño de fuente individual 36 pixeles..
+}
+h3 {                                                        //Selectores de h3.
+    font-size: 3rem;                                        //Tamaño de fuente individual 30 pixeles.
+}
+
+//Imagenes.
+img {                                                        //Selector de img.
+    max-width: 100%;                                         //Ancho Maximo del 100%.
+    width: 100%;                                             //Ancho de 100%.
+    height: auto;                                            //Altura automatica.                                   
+    display: block;                                          //Habilita Display Block.
+}

@@ -1,0 +1,66 @@
+@use 'base/variables' as v;                                   //Para usar archivo variables usar v.
+@use 'base/mixins' as m;                                      //Para usar archivo mixins usar m.
+
+.galeria {                                                    //Selector clase .galeria.
+    padding: 5rem 0;                                          
+
+    h3 {                                                      //Selector h3.
+        text-align: center;                                   //Alineacion de texto al centro.
+    }
+}
+
+.galeria-imagenes {                                           //Selector clase .galeria-imagenes.
+    @include m.resetear-lista;                               
+    @include m.grid(2, 2rem);
+    @include m.telefono {
+        @include m.grid(3, 2rem);
+    }
+
+    @include m.tablet {
+        @include m.grid(4, 2rem);
+    }
+
+    @include m.desktop {
+        @include m.grid(6, 2rem);
+    }
+}
+
+//Overlay de Galeria.
+.overlay {                                                      //Selector clase .overlay.
+    position: fixed;                                            //Posicion fija.
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: grid;                                              //Habilitamos display grid.
+    place-items: center;                                        //Alinea elementos al centro.
+
+    background-color: rgb( 0 0 0 / .5);                       //Color de fondo.
+
+    picture {                                                   //Selector picture.
+        display: block;                                         //Habilitamos display block.
+        max-width: 80rem;                                       //Ancho maximo de 800 pixeles.
+    }
+}
+
+//Boton Cerrar Imagen Galeria JS.
+.btn-cerrar {                                                   //Selector clase .btn-cerrar.
+    width: 5rem;                                                //Ancho de 5rem
+    height: 5rem;                                               //Altura de 5rem.
+    border-radius: 50%;                                         //Borde del boton.
+    background-color: v.$verde;                                 //Color de fondo del boton.
+    color: v.$negro;                                            //Color de la X.
+    display: grid;                                              //Habilitamos display grid.
+    place-items: center;                                        //Alinea elemento al centro. 
+    font-weight: bolder;                                        //Grosor de la X del boton.
+
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+

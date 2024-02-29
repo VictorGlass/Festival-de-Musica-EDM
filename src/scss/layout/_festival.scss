@@ -1,0 +1,32 @@
+//Importando los archivos necesarios de estilos.
+
+@use 'base/variables' as v;                //Para usar variables usar v.
+@use 'base/mixins' as m;                   //Para usar mixins usar m.
+
+//Seccion Sobre Festival.
+.sobre-festival {                          //Selector clase .sobre-festival.
+    padding: 5rem 0;                       //Da espacio arriba y abajo.
+
+    @include m.tablet {                    //Mixin de Media Querie tamaño tablet.
+        @include m.grid(2, 5rem);          //Mixin para generar columnas.
+    }
+}
+
+//Contenido Festival.
+.contenido-festival {                      //Selector clase .contenido-festival.
+    display: flex;                         //Habilitamos Flexbox.
+    flex-direction: column;                //Cambia la direccion.
+    justify-content: center;               //Alinea verticalmente.
+
+    margin-top: 5rem;                      //Margen superior 50 pixeles.
+    @include m.tablet {                    //Mixin de Media Querie tamaño tablet.
+        margin-top: 0;                     //Margen superior.
+    }
+    h2 {                                   //Selector h2.
+        margin-bottom: 2rem;               //Margen inferior.
+    }
+    .fecha {                               //Selector clase .fecha.
+        color: v.$rosa;                    //Color del Parrafo.
+        font-weight: 700;                  //Tamaño de la Tipografia.
+    }
+}

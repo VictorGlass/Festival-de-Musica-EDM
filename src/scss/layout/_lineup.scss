@@ -1,0 +1,101 @@
+//Importando los archivos necesarios para los estilos.
+
+@use 'base/variables' as v;                              //Para usar archivo de variables usar v.
+@use 'base/mixins' as m;                                 //Para usar mixins usar m.
+
+//Contenedor Lineup.
+.lineup {                                                //Selector.
+    background-color: v.$rosa;                           //Color de fondo seccion lineup.
+    padding: 5rem 0;                                     //Separacion de 5pixeles.
+
+    h3, p {                                              //Selectores.
+        text-align: center;                              //Alineacion de texto.
+        color: v.$blanco;                                //Color para h3 y parrafos.
+    }                                                    //
+
+
+    .dia {                                               //Selector clase .dia.
+        text-transform: uppercase;                       //Texto Mayuscula.
+        margin: 5rem 0;                                  //Margen inferior.
+    }                                                    //
+}                                                        //
+
+//Contenedor escenarios-contenedor.
+.escenarios-contenedor {                                 //Selector clase .escenarios-contenedor.
+    @include m.tablet {                                  //Media querie de tamaño tablet.
+
+        @include m.grid(2, 5rem);                        //Mixin para generar columnas
+    }                                                    //
+
+    p {                                                  //Selector de parrafo.
+        color: v.$negro;                                 //Color para los parrafos de escenarios-contenedor.
+    }                                                    //
+}                                                        //
+
+//Contenido escenario.
+.escenario {                                             //Selector clase .escenario.
+        padding-top: 2rem;                               //Separacion arriba de 2pixeles.
+
+        p {                                              //Selector parrafo.
+
+            &::after {                                   //Pseudoelemento debe ir con un content.
+                content: '';                             //Content.
+                display: block;                          //Display de Bloque.
+                width: 20rem;                            //Ancho 200 pixeles.
+                height: 10rem;                           //Alto 100 pixeles.
+                background-size: 15rem;                  //Tamaño 150 pixeles.
+                background-repeat: no-repeat;            //Para no repetir la imagen.
+                background-position: center center;      //Posicion centrado arriba y abajo.
+                margin: 2rem auto 0 auto;                //Margen de 20pixeles + auto + 0 + auto.
+            }                                            //
+        }                                                //
+    }                                                    //
+
+
+.edm .nombre-escenario:after {                            //Selectores clases.
+    background-image: url(../img/icono_edm.png);          //Imagen de fondo.
+}                                                         //
+
+
+.rock .nombre-escenario:after {                           //Selectores de clases.
+    background-image: url(../img/icono_rock.png);         //Imagen de fondo.
+}                                                         //
+
+
+//Seccion Calendario.
+.calendario {                                             //Selector clase .calendario.
+    @include m.resetear-lista;                            //Mixin para quitar viñetas a listas.
+
+    li {                                                  //Selector de las listas.
+        padding: 2.5rem;                                  //Separacion de 25 pixeles.
+        font-weight: 700;                                 //Tamaño de la fuente.
+
+        span {                                            //Selector.
+            font-weight: 400;                             //Tamaño de la fuente.
+        }                                                 //
+    };                                                    //
+}                                                         //
+
+
+.bg-amarillo {                                            //Selector clase .bg-amarillo.
+    background-color: v.$amarillo;                        //Color de fondo.
+    border-radius: 0.5rem;                                //Borde en las esquinas.
+    li:nth-child(odd) {                                   //Seleccionara los impares de las listas.
+        background-color: darken(v.$amarillo, 30%);       //Color de fondo mas el porcentaje.
+    }                                                     //
+}                                                         //
+
+
+.bg-verde {                                               //Selector de clase .bg-verde.
+    background-color: v.$verde;                           //Color de fondo.
+    border-radius: 0.5rem;                                //Bordes en las esquinas.
+    li:nth-child(odd) {
+        background-color: darken(v.$verde, 30%);          //Color de fondo mas el prcentaje.
+    }                                                     //
+}                                                         //
+
+.sombra {                                                      //Selector para sombra.
+    -webkit-box-shadow: 0px 7px 10px -2px rgba(0,0,0,0.72);  //
+    -moz-box-shadow: 0px 7px 10px -2px rgba(0,0,0,0.72);     //
+    box-shadow: 0px 7px 10px -2px rgba(0,0,0,0.72);          //
+}                                                              //
